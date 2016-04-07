@@ -3,50 +3,75 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Svatba bude</title>
+    <title>Svatba bude!</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/favicon-svatba.ico" />
   </head>
   <body>
     <div class="content">
 
-      <img src="/logo/logo.png" class="logo">
+      <img src="/logo/logo.png" class="logo logo-left">
+      <img src="/logo/logo.png" class="logo logo-right">
 
-      <h1>Svatba bude</h1>
+      <h1>SVATBA BUDE!</h1>
 
-      <p>Mája &amp; Ondra se vezmou 11. června 2016 v Klubu Patro v Lysé nad Labem. Obřad začne ve 14:00.</p>
+      <p class="center">Mája &amp; Ondra se vezmou 11. června 2016<br>ve 14:00 v klubu Patro v Lysé nad Labem.
+</p>
 
       <h2>Kde to bude?</h2>
-      <p>V Lysý.</p>
+      <p>Svatba se bude konat na zahradě klubu Patro. Adresa je Náměstí Bedřicha Hrozného 184, 289 22 Lysá nad Labem. Přímo před Patrem, v okolních ulicích i na náměstí se dá bez problému zaparkovat.</p>
 
-      <h2>Bude tam jídlo?</h2>
-      <p>Spousta.</p>
-
-      <h2>Můžu tam spát?</h2>
-      <p>Ano, když si to zaplatíš.</p>
-
-      <h2>Jak se mám obléct?</h2>
-      <p>Slušně.</p>
-
-      <h2>Co můžu dělat v okolí?</h2>
-      <p>Jít do parku.</p>
-
-      <h2>Co mám přivézt s sebou?</h2>
-      <p>Prachy.</p>
-
-      <h2>Kdo mi poradí?</h2>
-      <p>Dita.</p>
+      <h2>Jak se tam dostanu?</h2>
+      <p>Pokud se nechystáte autem, z vlakového nádraží je to do deseti minut pěšky. Z Prahy jezdí vlak třikrát do hodiny, z Hradce každou hodinu.</p>
 
       <h2>Jak to bude probíhat?</h2>
-      <p>Opijem se.</p>
+      <p>od 11:00 oběd s rodinou<br>
+      od 13:30 se na vás budeme těšit v klubu Patro<br>
+      Ve 14:00 začíná obřad. Prosím dorazte včas. Paní matrikářka říkala, že po nás má padla a chce si taky užít víkend.<br>
+      Po obřadu vás zveme na pozdní oběd, tak si šetřete pupky. Další radovánky už jsou v režimu volné zábavy a případnou dlouhou chvíli vám zpříjemní naše dvě milé a spřízněné kapely: kapela Lipno, která sice není z Rumunska, ale mohla by být a Rest in Haste, kteří by zase mohli být z Kalifornie, jen s tím rozdílem, že mají zkušebnu na Kolbence. Na zahradě můžeme vyvádět do 22:00, kdy se přesuneme dovnitř kde už můžeme tančit až do rána bílého.
+      </p>
+
+      <h2>Co je v okolí?</h2>
+      <p>Pokud si budete chtít před obřadem a nebo v neděli udělat výlet po okolí (což vřele doporučujeme), nabízí se hned několik variant. A všechno do 10 kilometrů od Lysé:<br>
+
+Pokud jste fandové filmu Slavnosti sněženek, stavte projeďte si Kersko a zastavte se v Kersku.<br>
+Jestli ale preferujete vesnice z konce 19.století, zajeďte si do skanzenu v Přerově. Zrenovované chaloupky tvoří pomalu vesnici a uvidíte, jak se dřív bydlelo nebo jak vypadala škola.<br>
+Na výlety rádi jezdíme také do Byšiček. Najdete tam unikátní kruhovou náves postavenou podle vzoru původních slovanských osad.<br>
+Přímo v Lysé pak stojí za vidění zámecký park s braunovými barokními sochami.</p>
+
+      <h2>Jak se mám obléct?</h2>
+      <p>Moc dobře víte, že na dress cody si zas tak nepotrpíme. Oblečte se proto tak nějak slušněji, ale zase abyste se cítili příjemně. Pánové, kravaty klidně nechte doma. Dámy, vy zase vysoké podpatky - v trávě na zahradě byste se s nimi beztak spíš natrápily. 😀 V červnu už by mělo být teplo, ale pro jistotu přibalte i svetr na večer, přestože ve 22:00 se budeme přesouvat dovnitř.
+      </p>
+
+      <h2>Co mám přivézt s sebou?</h2>
+      <p>Dary nám vozit nemusíte, po šesti letech společného soužití se nám podařilo sestavit plnou domácnost. Když už nám ale budete chtít něco dát, budeme rádi za příspěvek na svatební cestu.</p>
+
+      <h2>Kdo mi poradí?</h2>
+      <p>Se vším vám ráda poradí úžasná svědkyně Dita Hladíková.</p>
 
       <h2>Se šípkovou, nebo se zelim?</h2>
       <p>To se uvidí.</p>
 
-      
+      <h2>Mapa? Mapa!</h2>
+      <ol>
+      <li>Na Jitrách, oběd pro rodinu od 11:00
+      <li>Klub Patro, místo obřadu ve 13:30
+      <li>Kersko
+      <li>Skanzen v Přerově nad Labem
+      <li>Byšičky
+      <li>Barokní zámek a zahrada
+      </ol>
+
+      <div id="map"></div>
+
     </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script src="/script.js" async defer></script>
+
   </body>
 </html>
