@@ -20,6 +20,14 @@ html {
   /*transform: perspective(1000px) rotateX(40deg);*/
 }
 
+a {
+  color: #004375;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 
 h1, h2, h3, h4 {
   font-family: "lokal-bold";
@@ -123,7 +131,7 @@ h1:hover, h2:hover {
 
 .content {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 600px;
   padding: 10px;
 }
 
