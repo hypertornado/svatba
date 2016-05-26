@@ -13,5 +13,9 @@ func main() {
 }
 
 func start(app *prago.App) {
+	prago.Must(app.LoadTemplatePath("templates/*"))
 
+	app.MainController().Get("/fotky", func(request prago.Request) {
+		prago.Render(request, 200, "photos")
+	})
 }
