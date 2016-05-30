@@ -3,9 +3,19 @@
 
       <p class="center" style="font-size: 1.3em;">Nahrajte nám fotky na památku. Můžete si je i nechat vytisknout ve fotokoutku.</p>
 
-      <form method="POST" action="/nahrat" enctype="multipart/form-data">
+      <script type="text/javascript">
+        function submitUpload() {
+          if (document.getElementById("fileinput").files.length < 1) {
+            alert("Vyberte prosím soubor k nahrání");
+            return false;
+          }
+          return true;
+        }
+      </script>
 
-        <input type="file" name="file">
+      <form method="POST" action="/nahrat" enctype="multipart/form-data" onsubmit="return submitUpload()">
+
+        <input type="file" name="file" accept=".jpg,.jpeg" id="fileinput">
         <textarea placeholder="✍🏻Vzkaz" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="description"></textarea>
 
         <label>
@@ -26,5 +36,9 @@
         {{tmpl "img" $item}}
         <hr>
       {{end}}
+
+      <center>
+      <a href="/fotky/vse">Všechny nahrané fotky</a> &mdash; <a href="/fotky/slideshow">Slideshow</a>
+      </center>
 
 {{end}}

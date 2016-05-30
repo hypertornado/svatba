@@ -21,6 +21,7 @@ function initMap() {
   addPinToMap(4,50.1464659,14.8378023, "Skanzen v Přerově nad Labem");
   addPinToMap(5,50.1806812,14.7936072, "Byšičky");
   addPinToMap(6,50.2033323,14.8387577, "Barokní zámek a zahrada");
+  addPinToMap(7,50.1979621,14.8417838, "Penzion Alfa");
 }
 
 function addPinToMap(letter, lat, lon, title) {

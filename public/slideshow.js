@@ -17,7 +17,6 @@ function initSlideshow() {
   });
 
   $(".slideshow_settings_interval, .slideshow_settings_type").on("change", function (){
-    console.log("CH");
     nextReload = Date.now();
   });
 
