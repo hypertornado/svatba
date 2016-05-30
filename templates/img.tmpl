@@ -1,0 +1,12 @@
+{{define "img"}}
+<img class="loaded" src="{{.url}}">
+
+{{if .print}}
+  <p>🖨 Fotka bude vytištěna a můžete si jí vzít u tiskárny.</p>
+{{end}}
+
+{{if .description}}
+  <p>✍🏻<i>{{.description}}</i></p>
+{{end}}
+
+{{end}}

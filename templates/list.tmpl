@@ -1,0 +1,15 @@
+{{define "list"}}
+
+<h1>Všechny nahrané fotky</h1>
+
+<center>
+<a href="/fotky">Nahrát novou fotku</a>
+</center>
+<br><br>
+
+{{range $item := .files}}
+  {{tmpl "img" $item}}
+  <hr>
+{{end}}
+
+{{end}}

@@ -1,36 +1,15 @@
 {{define "photos"}}
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nahrajte fotky!</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/favicon-svatba.ico" />
-  </head>
-  <body>
-    <div class="content">
-
-      <img src="/logo/logo.png" class="logo logo-left">
-      <img src="/logo/logo.png" class="logo logo-right">
-
       <h1>Nahrajte fotky!</h1>
-
-
 
       <p class="center" style="font-size: 1.3em;">Nahrajte nám fotky na památku. Můžete si je i nechat vytisknout ve fotokoutku.</p>
 
-      <form method="POST">
+      <form method="POST" action="/nahrat" enctype="multipart/form-data">
 
-        <input type="file">
-        <textarea placeholder="✍🏻Vzkaz" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+        <input type="file" name="file">
+        <textarea placeholder="✍🏻Vzkaz" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="description"></textarea>
 
         <label>
-          <input type="checkbox"> 🖨 Vytisknout
+          <input type="checkbox" name="print"> 🖨 Vytisknout
         </label>
 
         <input type="submit" class="btn" value="👍🏿Nahrát">
@@ -38,23 +17,14 @@
 
       <h2>Nahrané fotky</h2>
 
+      <center>
+      <a href="/fotky/vse">Všechny nahrané fotky</a> &mdash; <a href="/fotky/slideshow">Slideshow</a>
+      </center>
+      <br><br>
 
+      {{range $item := .files}}
+        {{tmpl "img" $item}}
+        <hr>
+      {{end}}
 
-
-
-
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-76236479-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-
-  </body>
-</html>
 {{end}}

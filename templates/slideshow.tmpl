@@ -1,0 +1,29 @@
+{{define "slideshow"}}
+
+<div id="slideshow">
+
+
+<div class="slideshow_img">
+  <img>
+</div>
+
+<div class="slideshow_text"><span class="slideshow_text_content"></span></div>
+
+<div class="slideshow_settings">
+  <div class="slideshow_settings_title">Druh</div>
+  <select id="slideshow_settings_type">
+    <option value="random">Nahodny</option>
+    <option value="latest">Posledni</option>
+  </select>
+
+  <div class="slideshow_settings_title">Interval (sekundy)</div>
+  <input class="slideshow_settings_interval">
+</div>
+
+
+</div>
+
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="/slideshow.js"></script>
+
+{{end}}

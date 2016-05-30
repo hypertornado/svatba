@@ -1,5 +1,4 @@
 window.onload = function() {
-
 }
 
 var map;
@@ -35,5 +34,5 @@ function addPinToMap(letter, lat, lon, title) {
     title: title,
     icon: pinImage
   });
-
 }
+

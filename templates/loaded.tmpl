@@ -1,0 +1,13 @@
+{{define "loaded"}}
+      <h1>Fotka nahrána.<br>Děkujeme!</h1>
+
+      <center>
+      <a href="/fotky">Nahrát novou fotku</a> &mdash; <a href="/fotky/vse">Všechny nahrané fotky</a>
+      </center>
+      <br><br>
+
+      {{tmpl "img" .img}}
+
+  </body>
+</html>
+{{end}}
