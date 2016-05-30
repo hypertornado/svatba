@@ -14,7 +14,7 @@ func init() {
 }
 
 const (
-	version = "1"
+	version = "1.1"
 )
 
 var admin *administration.Admin
