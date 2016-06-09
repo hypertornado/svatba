@@ -13,7 +13,7 @@ import (
 
 var (
 	config              = map[string]string{}
-	configPath          = "/Users/ondrejodchazel/.svatba/sync_config.json"
+	configPath          = "~/.svatba/sync_config.json"
 	syncIntervalSeconds = 5
 )
 
@@ -28,6 +28,7 @@ func main() {
 		panic(err)
 	}
 
+	fmt.Printf("Přemku, startujem, tady je konfigurace: ")
 	fmt.Println(config)
 
 	var results []ApiResult
@@ -42,14 +43,17 @@ func main() {
 					if uploaded[v.UID] == false {
 						err = UploadFile(v)
 						if err != nil {
+							fmt.Println("Přemku, chyba! 😰")
 							fmt.Println(err)
 						}
 					}
 				}
 			} else {
+				fmt.Println("Přemku, chyba! 😰")
 				fmt.Println(err)
 			}
 		} else {
+			fmt.Println("Přemku, chyba! 😰")
 			fmt.Println(err)
 		}
 
@@ -58,7 +62,7 @@ func main() {
 }
 
 func UploadFile(f ApiResult) error {
-	fmt.Printf("Syncing %s, %s\n", time.Now().Format(time.RFC3339), f.UID)
+	fmt.Printf("🍺 Synchronizuji soubor %s v čase %s\n", f.UID, time.Now().Format(time.RFC3339))
 
 	out, err := os.Create(config["targetDir"] + "/" + f.UID + ".jpg")
 	defer out.Close()
