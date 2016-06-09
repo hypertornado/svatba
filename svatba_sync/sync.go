@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -13,12 +14,20 @@ import (
 
 var (
 	config              = map[string]string{}
-	configPath          = "~/.svatba/sync_config.json"
 	syncIntervalSeconds = 5
 )
 
 func main() {
-	data, err := ioutil.ReadFile(configPath)
+
+	fmt.Println("Přemku, startujem!")
+
+	configPath := flag.String("config", "sync_config.json", "path of config")
+
+	flag.Parse()
+
+	fmt.Println("Čtu konfiguraci z", *configPath)
+
+	data, err := ioutil.ReadFile(*configPath)
 	if err != nil {
 		panic(err)
 	}
@@ -28,7 +37,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("Přemku, startujem, tady je konfigurace: ")
+	fmt.Printf("Tady je konfigurace: ")
 	fmt.Println(config)
 
 	var results []ApiResult
