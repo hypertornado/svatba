@@ -307,3 +307,7 @@ hr {
   padding: 5px 50px;
 }
 
+img {
+  image-orientation: from-image;
+}
+

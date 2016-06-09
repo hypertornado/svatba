@@ -14,7 +14,7 @@ func init() {
 }
 
 const (
-	version = "1.1.3"
+	version = "1.1.4"
 )
 
 var admin *administration.Admin
@@ -140,7 +140,7 @@ func toListLayout(files []*administration.File) []map[string]interface{} {
 func toLayout(file administration.File) map[string]interface{} {
 	ret := make(map[string]interface{})
 	ret["description"] = file.Description
-	ret["url"] = file.GetOriginal()
+	ret["url"] = file.GetLarge()
 	ret["print"] = false
 	if file.UserId == -2 {
 		ret["print"] = true
