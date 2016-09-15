@@ -14,7 +14,7 @@ func init() {
 }
 
 const (
-	version = "1.1.5"
+	version = "1.1.6"
 )
 
 var admin *administration.Admin
@@ -28,7 +28,7 @@ func main() {
 	app.AddMiddleware(admin)
 
 	app.AddMiddleware(extensions.BuildMiddleware{[][2]string{{"public", ""}, {"templates", ""}}})
-	app.AddMiddleware(prago.MiddlewareRun{start})
+	app.AddMiddleware(prago.MiddlewareServer{start})
 	prago.Must(app.Init())
 }
 
