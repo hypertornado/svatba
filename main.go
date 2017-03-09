@@ -6,6 +6,8 @@ import (
 	administration "github.com/hypertornado/prago/extensions/admin"
 	"math/rand"
 	//"strings"
+	"fmt"
+	"github.com/sendgrid/sendgrid-go"
 	"time"
 )
 
@@ -14,7 +16,7 @@ func init() {
 }
 
 const (
-	version = "krisek-1"
+	version = "krisek-2"
 )
 
 var admin *administration.Admin
@@ -33,6 +35,34 @@ func main() {
 }
 
 func start(app *prago.App) {
+
+	app.MainController().Post("/email", func(request prago.Request) {
+		items := []string{"jmeno", "pocet_osob", "ubytovani", "poznamka"}
+		str := ""
+		for _, v := range items {
+			str += fmt.Sprintf("%s: %s<br>\n", v, request.Params().Get(v))
+		}
+		fmt.Println(str)
+
+		sendgridSecret := "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"
+
+		sg := sendgrid.NewSendGridClientWithApiKey(sendgridSecret)
+		message := sendgrid.NewMail()
+		message.AddTo("hypertornado@gmail.com")
+		message.AddTo("svatba.krisek@gmail.com")
+
+		message.SetSubject("Nové svatební RSVP!")
+		prago.Must(message.SetFrom("<rsvp@svatba-krisek.cz>"))
+
+		message.SetHTML(str)
+		err := sg.Send(message)
+		if err != nil {
+			panic(err)
+		}
+
+		prago.Redirect(request, "/dekujeme.html")
+	})
+
 	//prago.Must(app.LoadTemplatePath("templates/*"))
 }
 
