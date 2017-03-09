@@ -5,7 +5,7 @@ import (
 	"github.com/hypertornado/prago/extensions"
 	administration "github.com/hypertornado/prago/extensions/admin"
 	"math/rand"
-	"strings"
+	//"strings"
 	"time"
 )
 
@@ -22,16 +22,21 @@ var admin *administration.Admin
 func main() {
 	app := prago.NewApp("svatba", version)
 
-	app.AddMiddleware(&extensions.Sessions{})
-	app.AddMiddleware(&extensions.Gorm{})
-	admin = administration.NewAdmin("/admin", "Svatba Bude!")
-	app.AddMiddleware(admin)
+	//app.AddMiddleware(&extensions.Sessions{})
+	//app.AddMiddleware(&extensions.Gorm{})
+	//admin = administration.NewAdmin("/admin", "Svatba Bude!")
+	//app.AddMiddleware(admin)
 
 	app.AddMiddleware(extensions.BuildMiddleware{[][2]string{{"public", ""}, {"templates", ""}}})
 	app.AddMiddleware(prago.MiddlewareServer{start})
 	prago.Must(app.Init())
 }
 
+func start(app *prago.App) {
+	//prago.Must(app.LoadTemplatePath("templates/*"))
+}
+
+/*
 func start(app *prago.App) {
 	prago.Must(app.LoadTemplatePath("templates/*"))
 
@@ -149,3 +154,4 @@ func toLayout(file administration.File) map[string]interface{} {
 	ret["original"] = file.GetOriginal()
 	return ret
 }
+*/
