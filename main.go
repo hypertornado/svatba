@@ -14,7 +14,7 @@ func init() {
 }
 
 const (
-	version = "1.1.6"
+	version = "krisek-1"
 )
 
 var admin *administration.Admin
