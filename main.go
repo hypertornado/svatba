@@ -16,7 +16,7 @@ func init() {
 }
 
 const (
-	version = "krisek-2"
+	version = "krisek-3"
 )
 
 var admin *administration.Admin
